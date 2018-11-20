@@ -1,0 +1,60 @@
+<ActionBar title="Charts" class="action-bar">
+    <!-- Uncomment for NavigationDrawer-->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>-
+</ActionBar>
+<ScrollView>
+    <StackLayout class="m-t-10">
+        <label text="Number of registered users per year" class="h2 text-center" textWrap="true"></label>
+
+        <RadCartesianChart class="m-t-8" height="300" (pointSelected)="pointSelected($event)" (pointDeselected)="pointDeselected($event)" >
+            <CategoricalAxis tkCartesianHorizontalAxis labelSize="12" lineColor="White" allowZoom=true ></CategoricalAxis>
+            <LinearAxis tkCartesianVerticalAxis android:minimum="0" labelFormat="%.0f" labelSize="12" allowZoom=true labelTextColor="#686868" lineColor="White"></LinearAxis>
+
+
+            <Trackball tkCartesianTrackball (trackBallContentRequested)="trackballRequested($event)"></Trackball>
+
+
+            <RadCartesianChartGrid tkCartesianGrid horizontalLinesVisible="true" verticalLinesVisible="false"
+                horizontalStripLinesVisible="false" verticalStripLinesVisible="false" horizontalStrokeColor="#cccccc" horizontalStrokeWidth="0.5"></RadCartesianChartGrid>
+
+
+            <BarSeries tkCartesianSeries seriesName="usersPerYear" [items]="usersPerYear" categoryProperty="year"
+                valueProperty="number" selectionMode="datapoint" ></BarSeries>
+
+
+            <Palette tkCartesianPalette seriesName="usersPerYear" seriesState="Normal">
+                <PaletteEntry tkCartesianPaletteEntry fillColor="#4286f4" strokeColor="#4286f4"></PaletteEntry>
+            </Palette>
+            <Palette tkCartesianPalette seriesName="usersPerYear" seriesState="Selected">
+                <PaletteEntry tkCartesianPaletteEntry fillColor="#629dfc" strokeColor="#4286f4"></PaletteEntry>
+            </Palette>
+
+        </RadCartesianChart>
+
+        <!--Uncomment for 40000 datapoints-->
+        <!--<RadCartesianChart height="300">
+            <DateTimeContinuousAxis tkCartesianHorizontalAxis dateFormat="yyyy" majorStep="Year"></DateTimeContinuousAxis>
+            <LinearAxis tkCartesianVerticalAxis android:minimum="0" labelFormat="%.0f" labelSize="12" labelTextColor="#686868" lineColor="White"></LinearAxis>
+            <LineSeries tkCartesianSeries [items]="users" categoryProperty="registered" valueProperty="age"></LineSeries>
+            <LineSeries tkCartesianSeries [items]="users" categoryProperty="registered" valueProperty="age"></LineSeries>
+            <LineSeries tkCartesianSeries [items]="users" categoryProperty="registered" valueProperty="age"></LineSeries>
+            <LineSeries tkCartesianSeries [items]="users" categoryProperty="registered" valueProperty="age"></LineSeries>
+        </RadCartesianChart>-->
+
+
+        <StackLayout [visibility]="moreInformationVisible">
+            <StackLayout orientation="horizontal">
+                <Label text="Year: " class="font-weight-bold"></Label>
+                <Label [text]="selectedYear"></Label>
+            </StackLayout>
+            <StackLayout orientation="horizontal">
+                <Label text="Number: " class="font-weight-bold"></Label>
+                <Label [text]="selectedNumber"></Label>
+            </StackLayout>
+        </StackLayout>
+
+    </StackLayout>
+</ScrollView>

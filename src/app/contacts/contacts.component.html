@@ -1,0 +1,61 @@
+
+<ActionBar title="UI Standards" class="action-bar">
+    <!-- Uncomment for NavigationDrawer -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+</ActionBar>
+
+<!--<ListView [items]="contacts" class="list-group" [itemTemplateSelector]="templateSelector">
+    <ng-template let-item="item" nsTemplateKey="default">
+    <FlexboxLayout flexDirection="row" [nsRouterLink]="['/details', item.id]" class="list-group-item">
+        <Image src="~/sample_images/avatar.png" class="list-item-image"></Image>
+
+        <FlexboxLayout flexDirection="column" class="list-item-labels">
+            <Label flexGrow="1" [text]="item.name" class="list-group-item-heading"></Label>
+            <Label flexGrow="1" [text]="item.email" class="list-group-item-text"></Label>
+        </FlexboxLayout>
+        
+    </FlexboxLayout>
+        
+    </ng-template>
+
+    <ng-template nsTemplateKey="section" let-item="item">
+        <StackLayout orientation="vertical" class="section-item">
+            <Label [text]="item.name" class="list-group-item-heading m-l-16 m-t-8 m-b-8"></Label>
+        </StackLayout>
+    </ng-template>
+    
+</ListView>-->
+
+<GridLayout rows="*">
+    <RadListView [items]="contacts" [itemTemplateSelector]="templateSelector" swipeActions="false" (itemSwipeProgressStarted)="onSwipeCellStarted($event)"
+    (itemSwipeProgressChanged)="onCellSwiping($event)" (itemSwipeProgressEnded)="onSwipeCellFinished($event)" (itemTap)="itemTap($event)" class="list-group">
+        <ng-template tkListItemTemplate let-item="item">
+            <FlexboxLayout flexDirection="row" class="list-group-item" >
+                <Image src="~/sample_images/avatar.png" class="list-item-image"></Image>
+    
+                <FlexboxLayout flexDirection="column" class="list-item-labels">
+                    <Label flexGrow="1" [text]="item.name" class="list-group-item-heading"></Label>
+                    <Label flexGrow="1" [text]="item.email" class="list-group-item-text"></Label>
+                </FlexboxLayout>
+    
+            </FlexboxLayout>
+        </ng-template>
+    
+        <ng-template tkTemplateKey="section" let-item="item">
+            <StackLayout orientation="vertical" class="section-item">
+                <Label [text]="item.name" class="list-group-item-heading m-l-16 m-t-8 m-b-8"></Label>
+            </StackLayout>
+        </ng-template>
+    
+    
+        <GridLayout *tkListItemSwipeTemplate columns="*, auto" rows="auto, *, auto" class="gridLayoutLayout">
+            <FlexboxLayout alignItems="center" justifyContent="center" id="delete-view" row="1" col="1" class="deleteViewStackLayout">
+                <Image src="~/sample_images/ic_delete.png" class="delete-image"></Image>
+            </FlexboxLayout>
+        </GridLayout>
+    </RadListView>
+
+</GridLayout>

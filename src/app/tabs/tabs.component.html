@@ -1,0 +1,10 @@
+<TabView androidTabsPosition="bottom" class="fa">
+
+    <StackLayout *tabItem="{title: '\uf0c0'}" class="inner-font-fam">
+        <page-router-outlet name="contactsTab"></page-router-outlet>
+    </StackLayout>
+
+    <page-router-outlet *tabItem="{title: '\uf03e'}" name="imagesDrawerTab">
+    </page-router-outlet>
+
+</TabView>

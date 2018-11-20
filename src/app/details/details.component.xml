@@ -1,0 +1,20 @@
+
+<StackLayout>
+    <ActionBar title="Details" class="action-bar">
+        <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="onBackPressed()"></NavigationButton>
+        <ActionItem ios.systemIcon="2" ios.position="right" android.systemIcon="ic_menu_edit" [nsRouterLink]="['/edit', contact.id]" ></ActionItem>
+    </ActionBar>
+
+        <FlexboxLayout justifyContent="center">
+            <StackLayout>
+                <Image [src]="image" (tap)="imageTapped()" stretch="aspectFill" class="profile-image"  height="200" width="200"></Image>
+                
+                <Label [text]="contact.name" class="h2" textWrap="true" textAlignment="center"></Label>
+                <Label [text]="contact.email" class="h3" textWrap="true" textAlignment="center"></Label>
+                <ScrollView height="100" class="m-b-8">
+                    <Label class="infotext" text="Here could be some awsome text and information about the person mentioned above" textWrap=true textAlignment=center></Label>
+                </ScrollView>
+                <!--<Button text="Images" class="btn-primary btn-images" [nsRouterLink]="['/images']"></Button>-->
+            </StackLayout>
+        </FlexboxLayout>
+</StackLayout>

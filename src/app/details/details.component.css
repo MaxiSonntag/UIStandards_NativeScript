@@ -1,0 +1,13 @@
+.btn-images{
+    width: 50%;
+}
+.infotext{
+    padding: 50px;
+    color: gray;
+}
+
+.profile-image{
+    border-radius: 100%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

@@ -1,0 +1,54 @@
+{
+    "isReadOnly": false,
+    "commitMode": "Manual",
+    "validationMode": "Manual",
+    "propertyAnnotations":
+    [
+        {
+            "name": "text",
+            "displayName": "Text",
+            "index": 0,
+            "validators": [
+                { "name": "NonEmpty" }
+            ]
+        },
+        {
+            "name": "email",
+            "displayName": "Email",
+            "index": 1,
+            "editor": "Email",
+            "validators": [
+                { "name": "Email" }
+            ]
+        },
+        {
+            "name": "phone",
+            "displayName": "Phone number",
+            "index": 2,
+            "editor": "Number",
+            "validators": [
+                { "name": "NonEmpty" },
+                { "name": "Phone" },
+                { "name": "MaximumLength", "params": {"length": 10 } }
+            ]
+        },
+        {
+            "name": "date",
+            "displayName": "Date",
+            "index": 3,
+            "editor": "DatePicker",
+            "validators": [
+                { "name": "NonEmpty" }
+            ]
+        },
+        {
+            "name": "time",
+            "displayName": "Time",
+            "index": 4,
+            "editor": "TimePicker",
+            "validators": [
+                { "name": "NonEmpty" }
+            ]
+        }
+    ]
+}

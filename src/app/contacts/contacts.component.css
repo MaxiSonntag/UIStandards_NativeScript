@@ -1,0 +1,38 @@
+.list-item{
+    padding: 20px;
+}
+
+.list-item-image{
+    width: 13%;
+    height: 13%;
+    margin-right: 3%;
+}
+
+.list-group-item{
+    background-color: white;
+}
+
+.deleteViewStackLayout{
+    background-color: red;
+}
+
+.section-item{
+    background-color: white;
+}
+
+.delete-image{
+    margin: 10%;
+}
+
+/* Einkommentieren für Trennstrich
+.list-group-item{
+    border-bottom-width: 1;
+    border-color: gray;
+}*/
+
+
+
+/* Einkommentieren für iPhone X Problem - Notch unten weiße Leiste
+.list-group{
+    margin-bottom: -100px;
+}*/
