@@ -5,13 +5,13 @@ import { Contact } from '../contacts/shared/contacts.model';
 import { RouterExtensions, PageRoute } from 'nativescript-angular/router';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import * as app from "tns-core-modules/application";
-import * as imagepicker from "nativescript-imagepicker";
+
 
 
 @Component({
 	moduleId: module.id,
 	selector: 'details',
-	templateUrl: './details.component.xml',
+	templateUrl: './details.component.html',
 	styleUrls: ['./details.component.css']
 })
 
@@ -39,34 +39,7 @@ export class DetailsComponent implements OnInit, AfterViewInit, OnDestroy {
 		sideDrawer.gesturesEnabled = true
 	}
 
-	imageTapped(){
-		console.log("Starting Image Selection")
-		let that = this;
-
-		let context = imagepicker.create({
-            mode: "single"
-		});
-		context
-        .authorize()
-        .then(() => {
-            that.image = [];
-            return context.present();
-        })
-        .then((selection) => {
-			console.log("Selection done: " + JSON.stringify(selection));
-            //that.imageSrc = that.isSingleMode && selection.length > 0 ? selection[0] : null;
-
-            // set the images to be loaded from the assets with optimal sizes (optimize memory usage)
-            /*selection.forEach(function (element) {
-                element.options.width = that.isSingleMode ? that.previewSize : that.thumbSize;
-                element.options.height = that.isSingleMode ? that.previewSize : that.thumbSize;
-            });*/
-			//console.log("Selection[0]: "+selection[0])
-            that.image = selection[0];
-        }).catch(function (e) {
-            console.log(e);
-        });
-	}
+	
 
 	onBackPressed(){
 		const sideDrawer = <RadSideDrawer>app.getRootView();

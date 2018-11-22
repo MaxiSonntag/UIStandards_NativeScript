@@ -1,12 +1,12 @@
 <ActionBar title="Charts" class="action-bar">
     <!-- Uncomment for NavigationDrawer-->
-    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+    <NavigationButton class="action-item" ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem class="action-item" icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
     </ActionItem>-
 </ActionBar>
 <ScrollView>
-    <StackLayout class="m-t-10">
+    <StackLayout class="m-t-10 page">
         <label text="Number of registered users per year" class="h2 text-center" textWrap="true"></label>
 
         <RadCartesianChart class="m-t-8" height="300" (pointSelected)="pointSelected($event)" (pointDeselected)="pointDeselected($event)" >

@@ -5,20 +5,23 @@ import { ContactsService } from '../contacts/shared/contacts.service';
 import { Contact } from '../contacts/shared/contacts.model';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import * as app from "tns-core-modules/application";
+import { Page } from 'tns-core-modules/ui/page/page';
+import { TextField } from 'ui/text-field';
 
 @Component({
 	moduleId: module.id,
 	selector: 'edit',
-	templateUrl: './edit.component.xml',
+	templateUrl: './edit.component.html',
 	styleUrls: ['./edit.component.css']
 })
 
 export class EditComponent implements OnInit, AfterViewInit {
 
-	constructor(private contactService: ContactsService, private route: ActivatedRoute, private routerExtensions: RouterExtensions) { }
+	constructor(private contactService: ContactsService, private route: ActivatedRoute, private routerExtensions: RouterExtensions, private page: Page) { }
 
 	private originalContact: Contact
 	private contact: Contact
+	private editText: TextField
 
 	ngOnInit() { 
 		const id = this.route.snapshot.params["id"];
@@ -32,6 +35,7 @@ export class EditComponent implements OnInit, AfterViewInit {
 	}
 
 	backPressed(){
+		console.log(this.editText.nativeView)
 		this.routerExtensions.backToPreviousPage()
 	}
 

@@ -1,41 +1,56 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Images } from './shared/images.model';
-import { ImagesService } from './shared/images.service';
-import { RouterExtensions } from 'nativescript-angular/router';
-import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
-import * as app from "tns-core-modules/application";
 import { Page } from 'tns-core-modules/ui/page/page';
+import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+import * as imagepicker from "nativescript-imagepicker";
 
 @Component({
 	moduleId: module.id,
 	selector: 'images',
-	templateUrl: 'images.component.html',
-	styleUrls: ['images.component.css'],
-	providers: [ImagesService]
+	templateUrl: './images.component.html',
+	styleUrls: ['./images.component.css']
 })
 
 export class ImagesComponent implements OnInit {
-	images: Images[] = [];
-	columns: number = 0
 
-	constructor(private imagesService: ImagesService, private routerExtensions: RouterExtensions, private page: Page) { }
+	public image : any
+
+	constructor(private page: Page) { }
 
 	ngOnInit() {
-		this.images = this.imagesService.getContacts();
-	}
-
-	ngAfterViewInit(): void {
-		//const sideDrawer = <RadSideDrawer>app.getRootView();
-		//sideDrawer.gesturesEnabled = false
-	}
-
-	onOpenCharts(){
-		this.routerExtensions.navigate(["charts"])
-	}
+		this.image = "~/sample_images/click_me.png"
+	 }
 
 	onDrawerButtonTap(): void {
         const sideDrawer = <RadSideDrawer>this.page.parent.parent;
         sideDrawer.showDrawer();
-    }
+	}
+	
+	imageTapped(){
+		console.log("Starting Image Selection")
+		let that = this;
+
+		let context = imagepicker.create({
+            mode: "single"
+		});
+		context
+        .authorize()
+        .then(() => {
+            that.image = [];
+            return context.present();
+        })
+        .then((selection) => {
+			console.log("Selection done: " + JSON.stringify(selection));
+            //that.imageSrc = that.isSingleMode && selection.length > 0 ? selection[0] : null;
+
+            // set the images to be loaded from the assets with optimal sizes (optimize memory usage)
+            /*selection.forEach(function (element) {
+                element.options.width = that.isSingleMode ? that.previewSize : that.thumbSize;
+                element.options.height = that.isSingleMode ? that.previewSize : that.thumbSize;
+            });*/
+			//console.log("Selection[0]: "+selection[0])
+            that.image = selection[0];
+        }).catch(function (e) {
+            console.log(e);
+        });
+	}
 }

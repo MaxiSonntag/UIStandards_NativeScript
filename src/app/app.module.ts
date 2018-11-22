@@ -8,11 +8,13 @@ import { ContactsComponent } from "./contacts/contacts.component";
 import { ContactsService } from "./contacts/shared/contacts.service";
 import { DetailsComponent } from "./details/details.component";
 import { EditComponent } from "./edit/edit.component";
-import { ImagesComponent } from "./images/images.component";
-import { ImagesService } from "./images/shared/images.service";
+import { ImageGridComponent } from "./grid/image_grid.component";
+import { ImagesService } from "./grid/shared/images.service";
 import { TabsComponent } from "./tabs/tabs.component";
 import { ChartsComponent } from "./charts/charts.component";
 import { InputsComponent } from './inputs/inputs.component';
+import { ThemesComponent } from './themes/themes.component';
+import { ImagesComponent } from './images/images.component'
 
 
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
@@ -47,10 +49,12 @@ import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
         ContactsComponent,
         DetailsComponent,
         EditComponent,
-        ImagesComponent,
+        ImageGridComponent,
         TabsComponent,
         ChartsComponent,
-        InputsComponent
+        InputsComponent,
+        ThemesComponent,
+        ImagesComponent
     ],
     providers: [
         ContactsService,

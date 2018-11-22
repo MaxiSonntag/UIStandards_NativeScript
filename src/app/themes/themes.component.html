@@ -1,0 +1,80 @@
+<ActionBar class="action-bar" title="Custom Themes">
+    <ActionBar title="Inputs" class="action-bar">
+        <!-- Uncomment for NavigationDrawer-->
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+        <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+            ios.position="left">
+        </ActionItem>-
+    </ActionBar>
+</ActionBar>
+
+<ScrollView class="page m-10">
+    <StackLayout>
+        <StackLayout class="m-b-15">
+            <Label class="h2" text="Text"></Label>
+            <label class="text-primary m-b-8" text="This is a primary text"></label>
+            <label class="text-danger m-b-8" text="This is a danger text"></label>
+            <label class="text-muted m-b-8" text="This is a muted text"></label>
+            <label class="bg-primary m-b-8" text="This is a primary background text"></label>
+            <label class="bg-danger m-b-8" text="This is a danger background text"></label>
+        </StackLayout>
+
+        <StackLayout class="hr-light"></StackLayout>
+
+        <StackLayout class="form m-t-15 m-b-15">
+            <Label class="h2" text="Inputs"></Label>
+            <TextField hint="This is an unmodified input" class=" m-b-8"></TextField>
+            <TextField class="input input-rounded m-b-8" hint="This is a rounded input"></TextField>
+            <TextField class="input input-border m-b-8" hint="This is a bordered input"></TextField>
+        </StackLayout>
+
+        <StackLayout class="hr-light"></StackLayout>
+
+        <StackLayout class="m-t-15 m-b-15">
+            <Label class="h2" text="Buttons"></Label>
+            <button class="btn btn-primary m-b-8" text="Primary button"></button>
+            <button class="btn btn-primary btn-rounded-lg m-b-8" text="Rounded primary button"></button>
+            <button class="btn btn-primary btn-rounded-sm m-b-8" text="Rounded primary button"></button>
+            <button class="btn btn-outline btn-rounded-lg m-b-8" text="Rounded large outlined button"></button>
+            <button class="btn btn-outline btn-rounded-sm m-b-8" text="Rounded small outlined button"></button>
+        </StackLayout>
+
+        <StackLayout class="hr-light"></StackLayout>
+
+        <StackLayout class="m-t-15 m-b-15">
+
+            <Label class="h2 m-b-10" text="Value selectors"></Label>
+            <StackLayout orientation="horizontal">
+                <StackLayout width="50%">
+                    <Switch horizontalAlignment="center" verticalAlignment="center" class="switch" checked="true"></Switch>
+                </StackLayout>
+
+                <StackLayout width="50%">
+                    <Slider horizontalAlignment="center" verticalAlignment="center" class="slider" minValue="0"
+                        maxValue="100" value="50" width="95%" isEnabled="true"></Slider>
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+
+
+        <StackLayout class="hr-light"></StackLayout>
+
+        <StackLayout class="m-t-15 m-b-15">
+            <Label class="h2 m-b-10" text="Indicators"></Label>
+            <StackLayout orientation="horizontal">
+                <StackLayout width="50%">
+                    <ActivityIndicator horizontalAlignment="center" verticalAlignment="center" busy="true" class="activity-indicator"></ActivityIndicator>
+                </StackLayout>
+                <StackLayout width="50%">
+                    <Progress horizontalAlignment="center" verticalAlignment="center" width="95%" maxValue="100"
+                        [value]="value" class="progress"></Progress>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+    </StackLayout>
+
+
+</ScrollView>

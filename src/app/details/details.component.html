@@ -7,12 +7,12 @@
 
         <FlexboxLayout justifyContent="center">
             <StackLayout>
-                <Image [src]="image" (tap)="imageTapped()" stretch="aspectFill" class="profile-image"  height="200" width="200"></Image>
+                <Image [src]="image" class="img-circle" (tap)="imageTapped()" stretch="aspectFill" class="profile-image"  height="200" width="200"></Image>
                 
-                <Label [text]="contact.name" class="h2" textWrap="true" textAlignment="center"></Label>
-                <Label [text]="contact.email" class="h3" textWrap="true" textAlignment="center"></Label>
+                <Label [text]="contact.name" class="h2 label" textWrap="true" textAlignment="center"></Label>
+                <Label [text]="contact.email" class="h3 label" textWrap="true" textAlignment="center"></Label>
                 <ScrollView height="100" class="m-b-8">
-                    <Label class="infotext" text="Here could be some awsome text and information about the person mentioned above" textWrap=true textAlignment=center></Label>
+                    <Label class="body label" text="Here could be some awsome text and information about the person mentioned above" textWrap=true textAlignment=center></Label>
                 </ScrollView>
                 <!--<Button text="Images" class="btn-primary btn-images" [nsRouterLink]="['/images']"></Button>-->
             </StackLayout>

@@ -11,26 +11,30 @@
         <TextField hint="Enter text" autocorrect="false" returnKeyType="done" maxLength="10" class="input input-border"></TextField>
 </StackLayout>-->
 
+<GridLayout rows="auto, *">
 
-<StackLayout>
-        <RadDataForm tkExampleTitle tkToggleNavButton id="dataForm" [source]="inputTest" [metadata]="metadata">
-                <!--<TKEntityProperty tkDataFormProperty name="text" displayName="Text" index="0"></TKEntityProperty>
-                <TKEntityProperty tkDataFormProperty name="email" displayName="E-Mail" index="1">
-                        <TKPropertyEditor tkEntityPropertyEditor type="Email"></TKPropertyEditor>
-                </TKEntityProperty>
-                <TKEntityProperty tkDataFormProperty name="phone" displayName="Phone number" index="2">
-                        <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
-                </TKEntityProperty>
-                <TKEntityProperty tkDataFormProperty name="date" displayName="Date" index=3>
-                        <TKPropertyEditor tkEntityPropertyEditor type="DatePicker"></TKPropertyEditor>
-                </TKEntityProperty>-->
-        </RadDataForm>
-
-        <GridLayout rows="auto" columns="*">
-                <label id="resultText" row="0" horizontalAlignment="center" class="h3" fontWeight="bold">
-                </label>
-                <Button row="1" horizontalAlignment="left" class="m-l-50 btn btn-primary" text="Validate" (tap)="validateForm()"></Button>
-                <Button row="1" horizontalAlignment="right" class="m-r-50 btn btn-primary" text="Reset" (tap)="resetForm()"></Button>
-        </GridLayout>
+                <RadDataForm row="1" tkExampleTitle tkToggleNavButton id="dataForm" [source]="inputTest" [metadata]="metadata">
+                                <!--<TKEntityProperty tkDataFormProperty name="text" displayName="Text" index="0"></TKEntityProperty>
+                                <TKEntityProperty tkDataFormProperty name="email" displayName="E-Mail" index="1">
+                                        <TKPropertyEditor tkEntityPropertyEditor type="Email"></TKPropertyEditor>
+                                </TKEntityProperty>
+                                <TKEntityProperty tkDataFormProperty name="phone" displayName="Phone number" index="2">
+                                        <TKPropertyEditor tkEntityPropertyEditor type="Number"></TKPropertyEditor>
+                                </TKEntityProperty>
+                                <TKEntityProperty tkDataFormProperty name="date" displayName="Date" index=3>
+                                        <TKPropertyEditor tkEntityPropertyEditor type="DatePicker"></TKPropertyEditor>
+                                </TKEntityProperty>-->
+                                
+                        </RadDataForm>
+                        <GridLayout row="0" rows="auto, auto" columns="*">
+                                <label [text]="resultText" id="resultText" row="1" horizontalAlignment="center" class="h3" fontWeight="bold">
+                                </label>
+                                <Button row="0" horizontalAlignment="left" class="m-l-50 btn btn-primary" text="Validate" (tap)="validateForm()"></Button>
+                                <Button row="0" horizontalAlignment="right" class="m-r-50 btn btn-primary" text="Reset" (tap)="resetForm()"></Button>
+                        </GridLayout>
+</GridLayout>
         
-</StackLayout>
+        
+
+        
+        

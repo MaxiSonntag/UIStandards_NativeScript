@@ -29,19 +29,14 @@
     
 </ListView>-->
 
-<GridLayout rows="*">
-    <RadListView [items]="contacts" [itemTemplateSelector]="templateSelector" swipeActions="false" (itemSwipeProgressStarted)="onSwipeCellStarted($event)"
+    <RadListView [items]="contacts" [itemTemplateSelector]="templateSelector" swipeActions="true" (itemSwipeProgressStarted)="onSwipeCellStarted($event)"
     (itemSwipeProgressChanged)="onCellSwiping($event)" (itemSwipeProgressEnded)="onSwipeCellFinished($event)" (itemTap)="itemTap($event)" class="list-group">
         <ng-template tkListItemTemplate let-item="item">
-            <FlexboxLayout flexDirection="row" class="list-group-item" >
-                <Image src="~/sample_images/avatar.png" class="list-item-image"></Image>
-    
-                <FlexboxLayout flexDirection="column" class="list-item-labels">
-                    <Label flexGrow="1" [text]="item.name" class="list-group-item-heading"></Label>
-                    <Label flexGrow="1" [text]="item.email" class="list-group-item-text"></Label>
-                </FlexboxLayout>
-    
-            </FlexboxLayout>
+            <GridLayout rows="auto, *" columns="auto,*" class="list-group-item" >
+                <Image row="0" col="0" src="~/sample_images/avatar.png" width="60em" height="60em" class="thumb img-circle" rowSpan="2"></Image>
+                <Label row="0" col="1" [text]="item.name" class="list-group-item-heading"></Label>
+                <Label row="1" col="1" [text]="item.email" class="list-group-item-text"></Label>
+            </GridLayout>
         </ng-template>
     
         <ng-template tkTemplateKey="section" let-item="item">
@@ -58,4 +53,3 @@
         </GridLayout>
     </RadListView>
 
-</GridLayout>

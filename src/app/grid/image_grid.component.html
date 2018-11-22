@@ -1,0 +1,16 @@
+<ActionBar title="Image Grid" class="action-bar">
+    <!-- Uncomment for NavigationDrawer-->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem class="action-item" icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+</ActionBar>
+  <RadListView [items]="images">
+    <ng-template tkListItemTemplate let-item="item">
+        <Image [src]="item.path" stretch="aspectFill" android:height="100" class="image-grid-item"></Image>
+    </ng-template>
+
+    <!-- >> angular-listview-item-layouts-grid -->
+    <ListViewGridLayout tkListViewLayout scrollDirection="Vertical" itemHeight="100" spanCount="4"></ListViewGridLayout>
+    <!-- << angular-listview-item-layouts-grid -->
+  </RadListView>

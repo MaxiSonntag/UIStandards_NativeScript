@@ -5,10 +5,12 @@ import { Routes } from "@angular/router";
 import { ContactsComponent } from "./contacts/contacts.component";
 import { DetailsComponent } from "./details/details.component";
 import { EditComponent } from "./edit/edit.component";
-import { ImagesComponent } from "./images/images.component";
+import { ImageGridComponent } from "./grid/image_grid.component";
 import { TabsComponent } from "./tabs/tabs.component"
 import { ChartsComponent } from "./charts/charts.component";
 import { InputsComponent } from "./inputs/inputs.component";
+import { ThemesComponent } from "./themes/themes.component";
+import { ImagesComponent } from "./images/images.component";
 
 
 const routes: Routes = [
@@ -22,9 +24,11 @@ const routes: Routes = [
     { path: "contacts", component: ContactsComponent },
     { path: "details/:id", component: DetailsComponent},
     { path: "edit/:id", component: EditComponent},
-    { path: "images", component: ImagesComponent},
+    { path: "imagegrid", component: ImageGridComponent},
     { path: "charts", component: ChartsComponent },
-    { path: "inputs", component: InputsComponent }
+    { path: "inputs", component: InputsComponent },
+    { path: "themes", component: ThemesComponent },
+    { path: "images", component: ImagesComponent }
     
 ];
 

@@ -1,16 +1,32 @@
 <ActionBar title="Images" class="action-bar">
     <!-- Uncomment for NavigationDrawer-->
     <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+    <ActionItem class="action-item" icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
         ios.position="left">
-    </ActionItem>-
+    </ActionItem>
 </ActionBar>
-  <RadListView [items]="images">
-    <ng-template tkListItemTemplate let-item="item">
-        <Image [src]="item.path" stretch="aspectFill" android:height="100" class="image-grid-item"></Image>
-    </ng-template>
 
-    <!-- >> angular-listview-item-layouts-grid -->
-    <ListViewGridLayout tkListViewLayout scrollDirection="Vertical" itemHeight="100" spanCount="4"></ListViewGridLayout>
-    <!-- << angular-listview-item-layouts-grid -->
-  </RadListView>
+<ScrollView class="page m-t-10">
+
+    <StackLayout >
+        <StackLayout class="m-b-15">
+            <Label class="h2 image-heading" text="Click to select local image"></Label>
+            <Image class="img-rounded" width="70%" [src]="image" stretch="aspectFill" (tap)="imageTapped()"></Image>
+        </StackLayout>
+
+        <StackLayout class="hr-light"></StackLayout>
+
+        <StackLayout class="m-t-15 m-b-15">
+            <Label class="h2 image-heading" text="This image is included in this app"></Label>
+            <Image class="img-rounded" width="70%" src="~/sample_images/DSC_5.jpg" stretch="aspectFill"></Image>
+        </StackLayout>
+
+        <StackLayout class="hr-light"></StackLayout>
+
+        <StackLayout class="m-t-15 m-b-15">
+            <Label class="h2 image-heading" text="This image is downloaded"></Label>
+            <Image class="img-rounded" width="70%" src="https://www.gstatic.com/webp/gallery/1.jpg" stretch="aspectFill"></Image>
+        </StackLayout>
+    </StackLayout>
+
+</ScrollView>

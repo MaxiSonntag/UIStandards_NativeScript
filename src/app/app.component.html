@@ -4,33 +4,45 @@ Learn more about the RadSideDrawer UI component and how it can be customized in 
 http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/getting-started
 -->
 <RadSideDrawer [drawerTransition]="sideDrawerTransition">
-    <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
+    <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer-center">
         <StackLayout row="0" class="sidedrawer-header">
-            <Label class="sidedrawer-header-image fa" text="&#xf2bd;"></Label>
+            <!--<StackLayout class="sidedrawer-header-image">-->
+                    <Label class="fa sidedrawer-header-image header-icon" text="&#xf2bd;"></Label>
+            <!--</StackLayout>-->
+            
             <Label class="sidedrawer-header-brand" text="User Name"></Label>
-            <Label class="footnote" text="username@mail.com"></Label>
         </StackLayout>
     
-        <ScrollView row="1">
-            <StackLayout class="sidedrawer-content">
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/contacts')" (tap)="onNavItemTap('/contacts')">
-                    <Label col="0" text="&#xf015;" class="fa"></Label>
-                    <Label col="1" text="List Master-Detail" class="p-r-10"></Label>
+        <ScrollView row="1" class="sidedrawer-content">
+            <StackLayout>
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/contacts')" [class.active]="isComponentSelected('/contacts')" (tap)="onNavItemTap('/contacts')">
+                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf0ca;"></Label>
+                    <Label class="sidedrawer-list-item-text" col="1" text="List Master-Detail"></Label>
                 </GridLayout>
 
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/images')" (tap)="onNavItemTap('/images')">
-                    <Label col="0" text="&#xf1ea;" class="fa"></Label>
-                    <Label col="1" text="Grid" class="p-r-10"></Label>
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/imagegrid')" [class.active]="isComponentSelected('/imagegrid')" (tap)="onNavItemTap('/imagegrid')">
+                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf009;"></Label>
+                    <Label class="sidedrawer-list-item-text" col="1" text="Grid"></Label>
                 </GridLayout>
 
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/charts')" (tap)="onNavItemTap('/charts')">
-                    <Label col="0" text="&#xf201;" class="fa"></Label>
-                    <Label col="1" text="Charts" class="p-r-10"></Label>
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/images')" [class.active]="isComponentSelected('/images')" (tap)="onNavItemTap('/images')">
+                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf302;"></Label>
+                    <Label class="sidedrawer-list-item-text" col="1" text="Images"></Label>
                 </GridLayout>
 
-                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/inputs')" (tap)="onNavItemTap('/inputs')">
-                    <Label col="0" text="&#xf11c;" class="fa"></Label>
-                    <Label col="1" text="Inputs" class="p-r-10"></Label>
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/charts')" [class.active]="isComponentSelected('/charts')" (tap)="onNavItemTap('/charts')">
+                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf201;"></Label>
+                    <Label class="sidedrawer-list-item-text" col="1" text="Charts"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/inputs')" [class.active]="isComponentSelected('/inputs')" (tap)="onNavItemTap('/inputs')">
+                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf11c;"></Label>
+                    <Label class="sidedrawer-list-item-text" col="1" text="Inputs"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/themes')" [class.active]="isComponentSelected('/themes')" (tap)="onNavItemTap('/themes')">
+                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf53f;"></Label>
+                    <Label class="sidedrawer-list-item-text" col="1" text="Themes"></Label>
                 </GridLayout>
             </StackLayout>
         </ScrollView>
