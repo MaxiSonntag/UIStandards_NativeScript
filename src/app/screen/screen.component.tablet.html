@@ -1,0 +1,20 @@
+<ActionBar title="Screens" class="action-bar">
+    <!-- Uncomment for NavigationDrawer-->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+</ActionBar>
+
+<StackLayout orientation="horizontal">
+    <CardView class="cardStyle" elevation="30">
+            <StackLayout [width]="availabeSpace">
+                    <screenlist (onClicked)="callbackFunction($event)" shouldShowSelection=true></screenlist>
+            </StackLayout>
+    </CardView>
+    
+    <StackLayout>
+            <screendetails [entry]="entry"></screendetails>
+    </StackLayout>
+    
+</StackLayout>

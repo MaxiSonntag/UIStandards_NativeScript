@@ -1,6 +1,12 @@
 {
     "nativescript": {
-        "id": "org.nativescript.UIStandards"
+        "id": "org.nativescript.UIStandards",
+        "tns-android": {
+            "version": "5.0.0"
+        },
+        "tns-ios": {
+            "version": "5.0.0"
+        }
     },
     "description": "NativeScript Application",
     "license": "SEE LICENSE IN <your-license-filename>",
@@ -16,6 +22,7 @@
         "@angular/platform-browser-dynamic": "~6.1.0",
         "@angular/router": "~6.1.0",
         "nativescript-angular": "^7.0.1",
+        "nativescript-cardview": "^3.1.1",
         "nativescript-imagepicker": "^6.0.4",
         "nativescript-local-notifications": "^3.1.0",
         "nativescript-theme-core": "^1.0.4",

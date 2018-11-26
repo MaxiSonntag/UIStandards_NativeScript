@@ -1,0 +1,9 @@
+<ListView [items]="items" class="list-group" (itemTap)="itemTapped($event)">
+
+    <ng-template let-item="item" let-idx="index">
+        <StackLayout class="list-group-item"> 
+            <Label class="list-group-heading Unseleced" [class.Selected]="idx===selectedIdx" [text]="item"></Label>
+        </StackLayout>
+    </ng-template>
+
+</ListView>

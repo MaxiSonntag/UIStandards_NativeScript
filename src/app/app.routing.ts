@@ -11,6 +11,8 @@ import { ChartsComponent } from "./charts/charts.component";
 import { InputsComponent } from "./inputs/inputs.component";
 import { ThemesComponent } from "./themes/themes.component";
 import { ImagesComponent } from "./images/images.component";
+import { ScreenComponent } from "./screen/screen.component";
+import { ScreenDetailsPageComponent } from "./screen/screendetailspage/screendetailspage.component";
 
 
 const routes: Routes = [
@@ -28,7 +30,9 @@ const routes: Routes = [
     { path: "charts", component: ChartsComponent },
     { path: "inputs", component: InputsComponent },
     { path: "themes", component: ThemesComponent },
-    { path: "images", component: ImagesComponent }
+    { path: "images", component: ImagesComponent },
+    { path: "screen", component: ScreenComponent },
+    { path: "screenDetails/:id", component: ScreenDetailsPageComponent }
     
 ];
 

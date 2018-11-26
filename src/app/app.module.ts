@@ -14,7 +14,11 @@ import { TabsComponent } from "./tabs/tabs.component";
 import { ChartsComponent } from "./charts/charts.component";
 import { InputsComponent } from './inputs/inputs.component';
 import { ThemesComponent } from './themes/themes.component';
-import { ImagesComponent } from './images/images.component'
+import { ImagesComponent } from './images/images.component';
+import { ScreenComponent } from './screen/screen.component';
+import { ScreenListComponent } from './screen/screenlist/screenlist.component';
+import { ScreenDetailsComponent } from './screen/screendetails/screendetails.component';
+import { ScreenDetailsPageComponent } from './screen/screendetailspage/screendetailspage.component';
 
 
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
@@ -54,7 +58,11 @@ import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
         ChartsComponent,
         InputsComponent,
         ThemesComponent,
-        ImagesComponent
+        ImagesComponent,
+        ScreenComponent,
+        ScreenListComponent,
+        ScreenDetailsComponent,
+        ScreenDetailsPageComponent
     ],
     providers: [
         ContactsService,
