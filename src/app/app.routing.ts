@@ -13,6 +13,8 @@ import { ThemesComponent } from "./themes/themes.component";
 import { ImagesComponent } from "./images/images.component";
 import { ScreenComponent } from "./screen/screen.component";
 import { ScreenDetailsPageComponent } from "./screen/screendetailspage/screendetailspage.component";
+import { FirstTabComponent } from "./tabs/first_tab/first_tab.component";
+import { SecondTabComponent } from "./tabs/second_tab/second_tab.component";
 
 
 const routes: Routes = [
@@ -27,6 +29,9 @@ const routes: Routes = [
     { path: "details/:id", component: DetailsComponent},
     { path: "edit/:id", component: EditComponent},
     { path: "imagegrid", component: ImageGridComponent},
+    { path: "tabs", component: TabsComponent},
+        { path: "firstTab", component: FirstTabComponent, outlet: "firstTab" },
+        { path: "secondTab", component: SecondTabComponent, outlet: "secondTab" },
     { path: "charts", component: ChartsComponent },
     { path: "inputs", component: InputsComponent },
     { path: "themes", component: ThemesComponent },

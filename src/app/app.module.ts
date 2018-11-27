@@ -11,6 +11,8 @@ import { EditComponent } from "./edit/edit.component";
 import { ImageGridComponent } from "./grid/image_grid.component";
 import { ImagesService } from "./grid/shared/images.service";
 import { TabsComponent } from "./tabs/tabs.component";
+import { FirstTabComponent } from "./tabs/first_tab/first_tab.component";
+import { SecondTabComponent } from "./tabs/second_tab/second_tab.component";
 import { ChartsComponent } from "./charts/charts.component";
 import { InputsComponent } from './inputs/inputs.component';
 import { ThemesComponent } from './themes/themes.component';
@@ -55,6 +57,8 @@ import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
         EditComponent,
         ImageGridComponent,
         TabsComponent,
+        FirstTabComponent,
+        SecondTabComponent,
         ChartsComponent,
         InputsComponent,
         ThemesComponent,

@@ -25,6 +25,11 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                     <Label class="sidedrawer-list-item-text" col="1" text="Grid"></Label>
                 </GridLayout>
 
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/tabs')" [class.active]="isComponentSelected('/tabs')" (tap)="onNavItemTap('/tabs')">
+                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf337;"></Label>
+                    <Label class="sidedrawer-list-item-text" col="1" text="Tabs"></Label>
+                </GridLayout>
+
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/images')" [class.active]="isComponentSelected('/images')" (tap)="onNavItemTap('/images')">
                     <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf302;"></Label>
                     <Label class="sidedrawer-list-item-text" col="1" text="Images"></Label>
@@ -44,6 +49,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                     <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf53f;"></Label>
                     <Label class="sidedrawer-list-item-text" col="1" text="Themes"></Label>
                 </GridLayout>
+
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/screen')" [class.active]="isComponentSelected('/screen')" (tap)="onNavItemTap('/screen')">
                     <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf065;"></Label>
                     <Label class="sidedrawer-list-item-text" col="1" text="Screen sizes"></Label>

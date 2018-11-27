@@ -1,10 +1,18 @@
-<TabView androidTabsPosition="bottom" class="fa">
+<ActionBar title="Custom elements" class="action-bar" id="action-bar">
+        <!-- Uncomment for NavigationDrawer-->
+        <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+        <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+            ios.position="left">
+        </ActionItem>
+    </ActionBar>
+<TabView androidTabsPosition="top" class="fa">
 
     <StackLayout *tabItem="{title: '\uf0c0'}" class="inner-font-fam">
-        <page-router-outlet name="contactsTab"></page-router-outlet>
+        <FirstTab></FirstTab>
     </StackLayout>
 
-    <page-router-outlet *tabItem="{title: '\uf03e'}" name="imagesDrawerTab">
-    </page-router-outlet>
+    <StackLayout *tabItem="{title: '\uf03e'}" name="secondTab">
+        <SecondTab></SecondTab>
+    </StackLayout>
 
 </TabView>
