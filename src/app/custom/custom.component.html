@@ -1,0 +1,12 @@
+<ActionBar flat="false" class="action-bar" id="action-bar">
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem class="action-item" icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <label text="Custom elements" class="action-bar-title"></label>
+</ActionBar>
+<StackLayout >
+    <StackLayout height="13%" class="action-bar-extension">
+        <CustomCalendar></CustomCalendar>
+    </StackLayout>
+</StackLayout>

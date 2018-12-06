@@ -1,0 +1,24 @@
+<GridLayout rows="*, auto" >
+    <RadListView row="0" [items]="dates" class="list-group item-container" id="list-view" [itemTemplateSelector]="templateSelector" (itemTap)="itemTap($event)">
+        <ng-template tkListItemTemplate let-item="item">
+            <GridLayout rows="auto,50" width="50" height="100%" class="item-container">
+                <Label row="0" [text]="weekdays[item.date.getDay()][0]" class="item weekday m-t-10"></Label>
+                <StackLayout row="1" class="m-5">
+                    <Label [text]="item.date.getDate()" class="item day p-t-5"></Label>
+                </StackLayout>
+                
+            </GridLayout>
+        </ng-template>
+
+        <ng-template tkTemplateKey="selected" let-item="item">
+            <GridLayout rows="auto,50" width="50" height="100%" class="item-container">
+                <Label row="0" [text]="weekdays[item.date.getDay()][0]" class="item weekday m-t-10"></Label>
+                <StackLayout row="1" class="border">
+                    <Label [text]="item.date.getDate()" class="item selected-day p-t-5"></Label>
+                </StackLayout>
+            </GridLayout>
+        </ng-template>
+
+        <ListViewLinearLayout tkListViewLayout scrollDirection="Horizontal"></ListViewLinearLayout>
+    </RadListView>
+</GridLayout>

@@ -54,6 +54,16 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                     <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf065;"></Label>
                     <Label class="sidedrawer-list-item-text" col="1" text="Screen sizes"></Label>
                 </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/custom')" [class.active]="isComponentSelected('/custom')" (tap)="onNavItemTap('/custom')">
+                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf552;"></Label>
+                    <Label class="sidedrawer-list-item-text" col="1" text="Custom elements"></Label>
+                </GridLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/web')" [class.active]="isComponentSelected('/web')" (tap)="onNavItemTap('/web')">
+                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf6ff;"></Label>
+                    <Label class="sidedrawer-list-item-text" col="1" text="Web content"></Label>
+                </GridLayout>
             </StackLayout>
         </ScrollView>
     </GridLayout>

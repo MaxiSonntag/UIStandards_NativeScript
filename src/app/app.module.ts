@@ -21,6 +21,9 @@ import { ScreenComponent } from './screen/screen.component';
 import { ScreenListComponent } from './screen/screenlist/screenlist.component';
 import { ScreenDetailsComponent } from './screen/screendetails/screendetails.component';
 import { ScreenDetailsPageComponent } from './screen/screendetailspage/screendetailspage.component';
+import { CustomComponent } from './custom/custom.component';
+import { CustomCalendarComponent } from './custom/custom_calendar/custom_calendar.component';
+import { WebComponent } from './web/web.component';
 
 
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
@@ -66,7 +69,10 @@ import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
         ScreenComponent,
         ScreenListComponent,
         ScreenDetailsComponent,
-        ScreenDetailsPageComponent
+        ScreenDetailsPageComponent,
+        CustomComponent,
+        CustomCalendarComponent,
+        WebComponent
     ],
     providers: [
         ContactsService,
