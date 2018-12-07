@@ -1,0 +1,22 @@
+<ActionBar title="Map" class="action-bar">
+    <!-- Uncomment for NavigationDrawer-->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+</ActionBar>
+<GridLayout rows="200, *" class="page">
+    <MapView row="0" #mapView (mapReady)="onMapReady($event)" (markerSelect)="markerSelected($event)"></MapView>
+    <ScrollView row="1">
+            <StackLayout>
+                    <button [text]="getCompassText()" class="btn" (tap)="toggleCompass()"></button>
+                    <button [text]="getMyLocationText()" class="btn" (tap)="toggleMyLocation()"></button>
+                    <button [text]="getRotationText()" class="btn" (tap)="toggleRotation()"></button>
+                    <button [text]="getZoomText()" class="btn" (tap)="toggleZoom()"></button>
+                    <button text="Change location" class="btn" (tap)="changeLocation()"></button>
+                    <button text="Add marker" class="btn" (tap)="addMarker()"></button>
+                    <button text="Remove markers" class="btn" (tap)="removeMarkers()"></button>
+                    <button text="Change style" class="btn" (tap)="changeStyle()"></button>
+                </StackLayout>
+    </ScrollView>
+</GridLayout>

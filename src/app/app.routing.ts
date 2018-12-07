@@ -17,6 +17,7 @@ import { FirstTabComponent } from "./tabs/first_tab/first_tab.component";
 import { SecondTabComponent } from "./tabs/second_tab/second_tab.component";
 import { CustomComponent } from "./custom/custom.component";
 import { WebComponent } from "./web/web.component";
+import { MapComponent } from "./map/map.component";
 
 
 const routes: Routes = [
@@ -41,7 +42,8 @@ const routes: Routes = [
     { path: "screen", component: ScreenComponent },
     { path: "screenDetails/:id", component: ScreenDetailsPageComponent },
     { path: "custom", component: CustomComponent },
-    { path: "web", component: WebComponent }
+    { path: "web", component: WebComponent },
+    { path: "map", component: MapComponent }
     
 ];
 

@@ -24,6 +24,7 @@ import { ScreenDetailsPageComponent } from './screen/screendetailspage/screendet
 import { CustomComponent } from './custom/custom.component';
 import { CustomCalendarComponent } from './custom/custom_calendar/custom_calendar.component';
 import { WebComponent } from './web/web.component';
+import { MapComponent } from './map/map.component';
 
 
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
@@ -31,6 +32,13 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
 import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
 
+
+import * as platform from "platform";
+declare var GMSServices: any;
+
+if (platform.isIOS) { 
+    GMSServices.provideAPIKey("### API KEY HERE ###");
+  }
 
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
@@ -72,7 +80,8 @@ import { NativeScriptUIDataFormModule } from "nativescript-ui-dataform/angular";
         ScreenDetailsPageComponent,
         CustomComponent,
         CustomCalendarComponent,
-        WebComponent
+        WebComponent,
+        MapComponent
     ],
     providers: [
         ContactsService,
