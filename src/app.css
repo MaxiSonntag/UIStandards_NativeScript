@@ -25,3 +25,7 @@ refer to http://docs.nativescript.org/ui/theme.
 .inner-font-fam{
     font-family: 'Roboto-Medium'
 }
+
+.sidedrawer-list-item-text{
+    border-width: 0.0;
+}
