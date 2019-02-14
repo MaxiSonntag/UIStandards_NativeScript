@@ -37,7 +37,12 @@ export class ImagesComponent implements OnInit {
         .then(() => {
             that.image = [];
             return context.present();
-        })
+		},
+		(reason)=>{
+			console.dir("Authorization failed for reason: "+reason)
+			this._showPermissionDialog(reason as Error)
+		}
+		)
         .then((selection) => {
 			console.log("Selection done: " + JSON.stringify(selection));
             //that.imageSrc = that.isSingleMode && selection.length > 0 ? selection[0] : null;
@@ -48,9 +53,21 @@ export class ImagesComponent implements OnInit {
                 element.options.height = that.isSingleMode ? that.previewSize : that.thumbSize;
             });*/
 			//console.log("Selection[0]: "+selection[0])
-            that.image = selection[0];
+			if(selection != undefined){
+				that.image = selection[0];
+			}
+            
         }).catch(function (e) {
             console.log(e);
         });
+	}
+
+	_showPermissionDialog(error: Error){
+		let options={
+			title: "Permission denied",
+			message: "You need to grant permission to access images.",
+			okButtonText: "Okay"
+		}
+		alert(options)
 	}
 }
