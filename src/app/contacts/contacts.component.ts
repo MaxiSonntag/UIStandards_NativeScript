@@ -5,7 +5,6 @@ import { ContactsService } from './shared/contacts.service';
 
 import { PlatformLocation } from '@angular/common'
 
-import { LocalNotifications } from "nativescript-local-notifications";
 import * as Dialogs from "ui/dialogs"
 import { Console } from '@angular/core/src/console';
 import { ObservableArray } from 'tns-core-modules/data/observable-array/observable-array';
@@ -48,19 +47,8 @@ export class ContactsComponent implements OnInit {
 
 	ngOnInit() {
 		
-		this._setupListItems();
-		this._templateSelector = this.templateSelectorFunction;
-
-		LocalNotifications.addOnMessageReceivedCallback(notificationData => {
-			Dialogs.alert({
-				title: "Notification received",
-				message: "ID: " + notificationData.id +
-					"\nTitle: " + notificationData.title +
-					"\nBody: " + notificationData.body,
-				okButtonText: "Excellent!"
-			});
-		}
-		);
+		this._setupListItems()
+		this._templateSelector = this.templateSelectorFunction
 	}
 
 	onDrawerButtonTap(): void {
@@ -172,22 +160,5 @@ export class ContactsComponent implements OnInit {
 		}
 		this.rightThresholdPassed = false;
 	}
-
-	schedule() {
-        LocalNotifications.requestPermission().then(granted => {
-            if(granted) {
-                LocalNotifications.schedule([{
-                    id: 1234,
-                    title: "Test notification",
-                    body: "You just received a local notification",
-                    at: new Date(new Date().getTime() + (10 * 1000))
-                }]).then(() => {
-                    console.log("Notification received!");
-                }, error => {
-                    console.dir(error);
-                });
-            }
-        });
-    }
 
 }
