@@ -35,7 +35,7 @@ export class EditComponent implements OnInit, AfterViewInit {
 	}
 
 	backPressed(){
-		console.log(this.editText.nativeView)
+		//console.log(this.editText.nativeView)
 		this.routerExtensions.backToPreviousPage()
 	}
 
