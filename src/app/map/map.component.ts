@@ -55,6 +55,8 @@ export class MapComponent implements OnInit {
 	//Map events
     onMapReady = (event) => {
 		console.log("Map Ready");
+		console.dir("MAP EVENT: "+event.eventName)
+		console.dir("MAP EVENT: "+event.object)
 		this._mapReady = true
 		this.map = this.mapView.nativeElement
 		this.map.mapAnimationsEnabled = true
