@@ -12,7 +12,6 @@ import * as app from "tns-core-modules/application";
 })
 export class AppComponent implements OnInit{ 
     private _activatedUrl: string;
-    private _sideDrawerTransition: DrawerTransitionBase;
 
     constructor(private router: Router, private routerExtensions: RouterExtensions) {
         // Use the component constructor to inject services.
@@ -20,16 +19,13 @@ export class AppComponent implements OnInit{
 
     ngOnInit(): void {
         this._activatedUrl = "/contacts";
-        this._sideDrawerTransition = new SlideInOnTopTransition();
 
         this.router.events
         .pipe(filter((event: any) => event instanceof NavigationEnd))
         .subscribe((event: NavigationEnd) => this._activatedUrl = event.urlAfterRedirects);
     }
 
-    get sideDrawerTransition(): DrawerTransitionBase {
-        return this._sideDrawerTransition;
-    }
+    
 
     isComponentSelected(url: string): boolean {
         return this._activatedUrl === url;

@@ -3,7 +3,7 @@ RadSideDrawer is a UI component part of the Progress NativeScript UI set of comp
 Learn more about the RadSideDrawer UI component and how it can be customized in this documentation article:
 http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawer/getting-started
 -->
-<RadSideDrawer [drawerTransition]="sideDrawerTransition">
+<RadSideDrawer>
     <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer-center">
         <StackLayout row="0" class="sidedrawer-header">
             <!--<StackLayout class="sidedrawer-header-image">-->
@@ -61,7 +61,7 @@ http://docs.telerik.com/devtools/nativescript-ui/Controls/NativeScript/SideDrawe
                 </GridLayout>
 
                 <GridLayout columns="auto, *" class="sidedrawer-list-item" [class.selected]="isComponentSelected('/web')" [class.active]="isComponentSelected('/web')" (tap)="onNavItemTap('/web')">
-                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf6ff;"></Label>
+                    <Label class="sidedrawer-list-item-icon fa" col="0" text="&#xf019;"></Label>
                     <Label class="sidedrawer-list-item-text" col="1" text="Web content"></Label>
                 </GridLayout>
 
