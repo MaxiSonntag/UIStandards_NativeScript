@@ -1,3 +1,20 @@
-/platforms
-package-lock.json
 nativescript_google_maps_api.xml
+### NativeScript ###
+/platforms
+/hooks
+/node_modules
+/lib
+/debugger
+/dist
+
+/app/**/*.map
+# shouldn't ignore this for vanilla nativescript
+ /app/**/*.js
+
+.DS_Store
+**/*.log
+tags
+
+ers.txt
+app.component.js
+package-lock.json
