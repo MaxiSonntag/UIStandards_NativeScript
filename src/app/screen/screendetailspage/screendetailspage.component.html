@@ -1,5 +1,8 @@
 <ActionBar title="Details" class="action-bar">
-    <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="onBackPressed()"></NavigationButton>
+    <NavigationButton ios:visibility="collapsed" icon="res://back" (tap)="onBackPressed()"></NavigationButton>
+    <ActionItem icon="res://navigation/back" android:visibility="collapsed" (tap)="onBackPressed()"
+        ios.position="left">
+    </ActionItem>
 </ActionBar>
 
 <screendetails [entry]="entry"></screendetails>
