@@ -2,7 +2,7 @@
 <StackLayout>
     <ActionBar title="Details" class="action-bar">
         <NavigationButton text="Back" icon="res://back" (tap)="onBackPressed()"></NavigationButton>
-        <ActionItem ios.systemIcon="2" ios.position="right" android.systemIcon="ic_menu_edit" [nsRouterLink]="['/edit', contact.id]" ></ActionItem>
+        <ActionItem ios.systemIcon="2" ios.position="right" icon="res://ic_edit" [nsRouterLink]="['/edit', contact.id]" ></ActionItem>
     </ActionBar>
 
         <FlexboxLayout justifyContent="center">
